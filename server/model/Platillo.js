@@ -13,7 +13,7 @@ const PlatilloSchema = new mongoose.Schema(
             type: String,
         },
         restaurante: {
-            type: Schema.Types.ObjectId, ref: "restaurantes"
+            type: Schema.Types.ObjectId, ref: "Restaurantes"
         }
     }
 )
