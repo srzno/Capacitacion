@@ -56,3 +56,20 @@ export const updateRestaurante = async (req, res) => {
         })
     } 
 }
+
+export const deleteRestaurante = async (req, res) => {
+    try {
+        const { id } = req.params
+        const { nombre } = req.body
+
+        await Restaurante.deleteOne({ _id: new mongoose.Types.ObjectId(id) }) 
+
+        res.status(200).send({
+            message: "Se borro el restaurante exitosamente"
+        })
+    } catch (error) {
+        res.status(400).send({
+            message: error.message
+        })
+    } 
+}
